@@ -1,0 +1,27 @@
+{
+  "name": "pcat",
+  "version": "1.0.0",
+  "description": "PCAT Photo APP",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fatihgumus59/PCAT.git"
+  },
+  "keywords": [
+    "pcat",
+    "photo",
+    "camera"
+  ],
+  "author": "Fatih Gümüş",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fatihgumus59/PCAT/issues"
+  },
+  "homepage": "https://github.com/fatihgumus59/PCAT#readme",
+  "devDependencies": {
+    "prettier": "2.5.1"
+  }
+}
