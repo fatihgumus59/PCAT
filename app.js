@@ -22,7 +22,7 @@ app.use(express.static('public'));
 app.use(fileUpload());
 
 app.get('/', async (req, res) => {
-  const photos = await Photos.find({}).sort('-dataCreated')
+  const photos = await Photos.find({}).sort('-dataCreated');
   res.render('index', {
     photos,
   });
@@ -60,7 +60,14 @@ app.post('/photos', async (req, res) => {
     });
     res.redirect('/');
   });
+});
 
+app.get('/photos/edit/:id', async (req, res) => {
+  const photo = await Photos.findOne({ _id: req.params.id });
+
+  res.render('edit', {
+    photo,
+  });
 });
 
 const port = 3000;
