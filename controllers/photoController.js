@@ -16,7 +16,7 @@ exports.getPhoto = async (req, res) => {
 };
 
 exports.createPhoto = async (req, res) => {
-  const uploadDir = '../public/uploads';
+  const uploadDir = 'public/uploads';
 
   if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir);
