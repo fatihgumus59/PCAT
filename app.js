@@ -81,6 +81,14 @@ app.put('/photos/:id', async (req, res) => {
   res.redirect(`/photos/${req.params.id}`);
 });
 
+app.delete('/photos/:id', async (req, res) => {
+  const photo = await Photos.findOne({ _id: req.params.id });
+  let deleteImage = __dirname + '/public' + photo.image;
+  fs.unlinkSync(deleteImage);
+  await Photos.findByIdAndRemove(req.params.id);
+  res.redirect('/');
+});
+
 const port = 3000;
 app.listen(port, () => {
   console.log(`Sunucu ${port} portunda başlatıldı...`);
